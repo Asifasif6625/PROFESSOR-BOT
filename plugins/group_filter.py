@@ -304,9 +304,14 @@ async def advantage_spell_chok(msg):
     g_s += await search_gagala(msg.text)
     gs_parsed = []
     if not g_s:
-        k = await msg.reply("I Cᴏᴜʟᴅɴ'ᴛ Fɪɴᴅ Aɴʏ Mᴏᴠɪᴇ Iɴ Tʜᴀᴛ Nᴀᴍᴇ")
-        await asyncio.sleep(8)
-        return await k.delete()
+        await msg.reply_photo(
+            photo="https://graph.org/file/01ddfcb1e8203879a63d7.jpg",  # 🔁 Replace with your image URL or file path
+            caption="❌ **Movie Not Found!**\n\nWe couldn't find that movie in our database. Please check the name and try again.",
+            parse_mode="markdown",
+            quote=True
+        )
+        await asyncio.sleep(20)
+        return
     regex = re.compile(r".*(imdb|wikipedia).*", re.IGNORECASE)  # look for imdb / wiki results
     gs = list(filter(regex.match, g_s))
     gs_parsed = [re.sub(r'\b(\-([a-zA-Z-\s])\-\simdb|(\-\s)?imdb|(\-\s)?wikipedia|\(|\)|\-|reviews|full|all|episode(s)?|film|movie|series)', '', i, flags=re.IGNORECASE) for i in gs]
