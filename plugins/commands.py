@@ -33,9 +33,9 @@ async def start(client, message):
         await client.send_message(LOG_CHANNEL, script.LOG_TEXT_P.format(message.from_user.id, message.from_user.mention, message.from_user.username, temp.U_NAME))
     if len(message.command) != 2:
         buttons = [[
-            InlineKeyboardButton("⚙️ 𝓑𝓞𝓣 𝓤𝓟𝓓𝓐𝓣𝓔 𝓒𝓗𝓐𝓝𝓝𝓔𝓛 ⚙️", url="https://t.me/mkn_bots_updates")
+            InlineKeyboardButton("⚙️ 𝓑𝓞𝓣 𝓤𝓟𝓓𝓐𝓣𝓔 𝓒𝓗𝓐𝓝𝓝𝓔𝓛 ⚙️", url="https://t.me/+d8zuVyrBBcNkYzI1")
             ],[
-            InlineKeyboardButton("📂 𝓙𝓞𝓘𝓝 𝓕𝓞𝓡 𝓤𝓟𝓓𝓐𝓣𝓔 𝓒𝓗𝓐𝓝𝓝𝓔𝓛 📂", url="https://t.me/mkn_bots_updates")
+            InlineKeyboardButton("📂 𝓙𝓞𝓘𝓝 𝓕𝓞𝓡 𝓤𝓟𝓓𝓐𝓣𝓔 𝓒𝓗𝓐𝓝𝓝𝓔𝓛 📂", url="https://t.me/+rjw2I6MtjW8xYzRl")
             ],[      
             InlineKeyboardButton("🔰 𝓑𝓞𝓣 𝓐𝓑𝓞𝓤𝓣 𝓟𝓐𝓝𝓔𝓛 🔰", callback_data="about")
         ]]
