@@ -5,7 +5,6 @@ from utils import get_shortlink
 from info import AUTH_USERS, PM_IMDB, SINGLE_BUTTON, PROTECT_CONTENT, SPELL_CHECK_REPLY, IMDB_TEMPLATE, IMDB_DELET_TIME, PMFILTER, G_FILTER, SHORT_URL, SHORT_API
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery
 from pyrogram import Client, filters, enums 
-from pyrogram.enums import ParseMode
 from pyrogram.errors import FloodWait, UserIsBlocked, MessageNotModified, PeerIdInvalid
 from utils import get_size, is_subscribed, get_poster, search_gagala, temp, get_settings, save_group_settings
 from database.users_chats_db import db
@@ -92,20 +91,9 @@ async def pm_spoll_tester(bot, query):
         k = (movie, files, offset, total_results)
         await pm_AutoFilter(bot, query, k)
     else:
-        await query.message.delete()
-        await bot.send_photo(
-            chat_id=query.message.chat.id,
-            photo="https://graph.org/file/01ddfcb1e8203879a63d7.jpg",  # 🔁 Replace with your image URL or local file path
-            caption=(
-                "❌ **Movie Not Found!**\n\n"
-                "We couldn't find this movie in our database.\n"
-                "Please check the name and try again with correct spelling."
-            ),
-            parse_mode=ParseMode.MARKDOWN
-        )
-        #k = await query.message.edit('❌ Sorry, the file you requested was not found in our database. Please check the name and try again.')
-        #await asyncio.sleep(10)
-        #await k.delete()
+        k = await query.message.edit('❌ Sorry, the file you requested was not found in our database. Please check the name and try again.')
+        await asyncio.sleep(10)
+        await k.delete()
 
 
 async def pm_AutoFilter(client, msg, pmspoll=False):    
