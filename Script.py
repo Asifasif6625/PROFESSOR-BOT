@@ -15,36 +15,17 @@ Mʏ Nᴀᴍᴇ Is {bot}.
 📌 <b>How to use the bot?</b>
 1️⃣ Just send the name of a movie or file.
 2️⃣ The bot will search and show you available results.
-3️⃣ Tap the file you want to download — it’s that easy!
-
-🛠️ <b>Bot Features:</b>
-✅ Auto Filter Support
-✅ Works in Groups
-✅ Fast and Easy Replies
-
-📞 Need help? Contact the admin or support group @Missmiya_bot
-
-🎬 Try sending any movie name and see the magic!"""
+3️⃣ Tap the file you want to download — it’s that easy!"""
 
     ABOUT_TXT = """ <b>About This Bot</b>
 
 This is an advanced Telegram Auto Filter Bot created to help users easily search and retrieve files by name.
 
-🔍 <b>Features:</b>
-- Instant file search
-- Auto filter in groups
-- Easy download links
-- Fast and reliable performance
-
 👤 <b>Developer / Maintainer:</b> αѕιƒ
 📡 <b>Hosted On:</b> Python + Pyrogram  
 📁 <b>Powered By:</b> MongoDB / Telegram File Store
 🛡️ <b>Version:</b> V4.6
-🌐 </b>Server:</b> Nill
-
-💬 For any issues or improvements, contact support. @Missmiya_bot
-
-— Thank you for using the bot! ❤️"""
+🌐 </b>Server:</b> Nill"""
    
     SOURCE_TXT = """🛠️ <b>Bot Source Info</b>
 
