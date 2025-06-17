@@ -1,23 +1,66 @@
 class script(object):  
-    START_TXT = """<b>✨ Hᴇʟʟᴏ {user}.
+    START_TXT = """<b> Hᴇʟʟᴏ {user}.
 
 Mʏ Nᴀᴍᴇ Is {bot}.
 
-I Cᴀɴ Pʀᴏᴠɪᴅᴇ Mᴏᴠɪᴇ Fᴏʀ Yᴏᴜ Jᴜsᴛ Aᴅᴅ Mᴇ Iɴ Yᴏᴜʀ Gʀᴏᴜᴘ Oʀ Jᴏɪɴ Oᴜʀ Gʀᴏᴜᴘ</b>"""
+👋 Hello there! I'm your movie search bot.",
+🤖 Welcome! Send me a name and I'll fetch it for you!
+🎬 Hey! Just type a movie or file name to get started.
+📁 Hi! I can help you find files. Try me!
+✨ Hello! I’m ready to fetch whatever you need.
+💡 Tip: Just send a name, I’ll do the rest!</b>"""
     
-    HELP_TXT = "Hᴇʏ {}\nHᴇʀᴇ Mꜱ Mʏ Hᴇʟᴩ"
+    HELP_TXT = """ℹ️<b>Help Section</b>
 
-    ABOUT_TXT = """<b>✯ Mʏ ɴᴀᴍᴇ: {}
-✯ Dᴇᴠᴇʟᴏᴩᴇʀ: <a herf=https://t.me/Mr_MKN>ᴍʀ.ᴍᴋɴ ᴛɢ</a>
-✯ Cᴏᴅᴇᴅ Oɴ: ᴩʏᴛʜᴏɴ/ᴩʏʀᴏɢʀᴀᴍ
-✯ Mʏ DᴀᴛᴀBᴀꜱᴇ: ᴍᴏɴɢᴏ-ᴅʙ
-✯ Mʏ Sᴇʀᴠᴇʀ: ᴀɴʏᴡʜᴇʀᴇ
-✯ Mʏ Vᴇʀꜱɪᴏɴ: ᴩʀᴏꜰᴇꜱꜱᴏʀ-ʙᴏᴛ ᴠ4.6 (12-05-2025)</b>"""
+📌 <b>How to use the bot?</b>
+1️⃣ Just send the name of a movie or file.
+2️⃣ The bot will search and show you available results.
+3️⃣ Tap the file you want to download — it’s that easy!
+
+🛠️ <b>Bot Features:</b>
+✅ Auto Filter Support
+✅ Works in Groups
+✅ Fast and Easy Replies
+
+📞 Need help? Contact the admin or support group @Missmiya_bot
+
+🎬 Try sending any movie name and see the magic!"""
+
+    ABOUT_TXT = """ <b>About This Bot</b>
+
+This is an advanced Telegram Auto Filter Bot created to help users easily search and retrieve files by name.
+
+🔍 <b>Features:</b>
+- Instant file search
+- Auto filter in groups
+- Easy download links
+- Fast and reliable performance
+
+👤 <b>Developer / Maintainer:</b> αѕιƒ
+📡 <b>Hosted On:</b> Python + Pyrogram  
+📁 <b>Powered By:</b> MongoDB / Telegram File Store
+🛡️ <b>Version:</b> V4.6
+🌐 </b>Server:</b> Nill
+
+💬 For any issues or improvements, contact support. @Missmiya_bot
+
+— Thank you for using the bot! ❤️"""
    
-    SOURCE_TXT = """<b>NOTE:</b>
-- ꜱᴏᴜʀᴄᴇ ᴄᴏᴅᴇ ʜᴇʀᴇ ◉› :<a href=https://github.com/MrMKN/PROFESSOR-BOT>𝐏𝐑𝐎𝐅𝐄𝐒𝐒𝐎𝐑-𝐁𝐎𝐓</a>
+    SOURCE_TXT = """🛠️ <b>Bot Source Info</b>
 
-<b>ᴅᴇᴠ: <a herf=https://t.me/Mr_MKN>ᴍʀ.ᴍᴋɴ ᴛɢ</a></b>"""
+This bot was built using:
+- <b>Python</b> 🐍
+- <b>Pyrogram Library</b>
+- <b>MongoDB</b> as the backend
+- <b>Telegram File Store</b> system
+
+📁 Designed for smooth autofilter file search experience.
+
+👤 Developed & Managed by: αѕιƒ
+
+🔗 Source code is <b>private</b> and not publicly available.
+
+For partnership or development queries, contact support."""
 
     FILE_TXT = """<b>➤ Hᴇʟᴘ Fᴏʀ Fɪʟᴇ Sᴛᴏʀᴇ</b>
 
@@ -210,9 +253,13 @@ Tᴏᴛᴀʟ Dɪꜱᴋ: {}
 Uꜱᴇᴅ Dɪꜱᴋ: {} ({}%)
 Fʀᴇᴇ Dɪꜱᴋ: {}"""
     
-    BUTTON_LOCK_TEXT = "Hᴇʏ {query}\nTʜɪꜱ Iꜱ Nᴏᴛ Fᴏʀ Yᴏᴜ. Sᴇᴀʀᴄʜ Yᴏᴜʀ Sᴇʟꜰ"
+    BUTTON_LOCK_TEXT = """🚫 {query}  You are not allowed to use this button!Only authorized users or admins can access this feature.
+    
+    🚫 ഈ ബട്ടൺ നിങ്ങൾക്ക് ഉപയോഗിക്കാൻ അനുവദിച്ചിട്ടില്ല!ഇത് ഉപയോഗിക്കാൻ അനുവാദമുള്ളവർക്കേ സാധിക്കൂ.
+    
+    😅 Oops! This button isn’t for you.Maybe next time 😉"""
    
-    FORCE_SUB_TEXT = "Sᴏʀʀʏ Bʀᴏ Yᴏᴜʀ Nᴏᴛ Jᴏɪɴᴇᴅ Mʏ Cʜᴀɴɴᴇʟ Sᴏ Pʟᴇᴀsᴇ Cʟɪᴄᴋ Jᴏɪɴ Bᴜᴛᴛᴏɴ Tᴏ Jᴏɪɴ Mʏ Cʜᴀɴɴᴇʟ Aɴᴅ Tʀʏ Aɢᴀɪɴ"
+    FORCE_SUB_TEXT = "📢 Please subscribe to our channel to access the files!"
    
     WELCOM_TEXT = """Hᴇʏ {user} 💞
 
