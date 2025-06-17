@@ -151,9 +151,21 @@ async def advantage_spoll_choker(bot, query):
             k = (movie, files, offset, total_results)
             await auto_filter(bot, query, k)
         else:
-            k = await query.message.edit('This Movie Not Found In DataBase')
-            await asyncio.sleep(10)
-            await k.delete()
+            await query.message.delete()
+            await bot.send_photo(
+                chat_id=query.message.chat.id,
+                photo="https://graph.org/file/01ddfcb1e8203879a63d7.jpg",  # 🔁 Replace with your image URL or local file path
+                caption=(
+                    "❌ **Movie Not Found!**\n\n"
+                    "We couldn't find this movie in our database.\n"
+                    "Please check the name and try again with correct spelling."
+                ),
+                parse_mode=ParseMode.MARKDOWN
+            )
+            
+            #k = await query.message.edit('This Movie Not Found In DataBase')
+            #await asyncio.sleep(10)
+            #await k.delete()
 
 
 @Client.on_message(filters.group & filters.text & filters.incoming & filters.chat(AUTH_GROUPS) if AUTH_GROUPS else filters.text & filters.incoming & filters.group)
@@ -267,7 +279,7 @@ async def auto_filter(client, msg, spoll=False):
             **locals()
         )
     else:
-        cap = f"Hᴇʀᴇ Is Wʜᴀᴛ I Fᴏᴜɴᴅ Fᴏʀ Yᴏᴜʀ Qᴜᴇʀʏ {search}"
+        cap = f"{search} 🎬 Movie found! Below are the available files related to your search. Select your preferred quality or format from the buttons below and start downloading instantly. If you don’t see what you’re looking for, try searching with a different name or keyword."
     if imdb and imdb.get('poster'):
         try:
             hehe = await message.reply_photo(photo=imdb.get('poster'), caption=cap, reply_markup=InlineKeyboardMarkup(btn))
