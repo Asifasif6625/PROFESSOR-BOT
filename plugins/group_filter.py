@@ -3,7 +3,6 @@ from pyrogram.errors.exceptions.bad_request_400 import MediaEmpty, PhotoInvalidD
 from Script import script
 from utils import get_shortlink, admin_filter 
 import pyrogram
-from pyrogram.enums import ParseMode
 from database.connections_mdb import active_connection, all_connections, delete_connection, if_active, make_active, make_inactive
 from info import ADMINS, AUTH_CHANNEL, AUTH_USERS, CUSTOM_FILE_CAPTION, AUTH_GROUPS, P_TTI_SHOW_OFF, IMDB, PM_IMDB, SINGLE_BUTTON, PROTECT_CONTENT, \
     SPELL_CHECK_REPLY, IMDB_TEMPLATE, IMDB_DELET_TIME, START_MESSAGE, PMFILTER, G_FILTER, BUTTON_LOCK, BUTTON_LOCK_TEXT, SHORT_URL, SHORT_API
@@ -152,21 +151,9 @@ async def advantage_spoll_choker(bot, query):
             k = (movie, files, offset, total_results)
             await auto_filter(bot, query, k)
         else:
-            await query.message.delete()
-            await bot.send_photo(
-                chat_id=query.message.chat.id,
-                photo="https://graph.org/file/01ddfcb1e8203879a63d7.jpg",  # 🔁 Replace with your image URL or local file path
-                caption=(
-                    "❌ **Movie Not Found!**\n\n"
-                    "We couldn't find this movie in our database.\n"
-                    "Please check the name and try again with correct spelling."
-                ),
-                parse_mode=ParseMode.MARKDOWN
-            )
-            
-            #k = await query.message.edit('This Movie Not Found In DataBase')
-            #await asyncio.sleep(10)
-            #await k.delete()
+            k = await query.message.edit('❌ Sorry, the file you requested was not found in our database. Please check the name and try again.')
+            await asyncio.sleep(10)
+            await k.delete()
 
 
 @Client.on_message(filters.group & filters.text & filters.incoming & filters.chat(AUTH_GROUPS) if AUTH_GROUPS else filters.text & filters.incoming & filters.group)
