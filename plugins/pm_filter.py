@@ -91,9 +91,20 @@ async def pm_spoll_tester(bot, query):
         k = (movie, files, offset, total_results)
         await pm_AutoFilter(bot, query, k)
     else:
-        k = await query.message.edit('❌ Sorry, the file you requested was not found in our database. Please check the name and try again.')
-        await asyncio.sleep(10)
-        await k.delete()
+        await query.message.delete()
+        await bot.send_photo(
+            chat_id=query.message.chat.id,
+            photo="https://i.imgur.com/NotFoundImage.jpg",  # 🔁 Replace with your image URL or local file path
+            caption=(
+                "❌ **Movie Not Found!**\n\n"
+                "We couldn't find this movie in our database.\n"
+                "Please check the name and try again with correct spelling."
+            ),
+            parse_mode=ParseMode.MARKDOWN
+        )
+        #k = await query.message.edit('❌ Sorry, the file you requested was not found in our database. Please check the name and try again.')
+        #await asyncio.sleep(10)
+        #await k.delete()
 
 
 async def pm_AutoFilter(client, msg, pmspoll=False):    
