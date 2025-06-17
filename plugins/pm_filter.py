@@ -210,7 +210,7 @@ async def pm_spoll_choker(msg):
     gs_parsed = []
     if not g_s:
         await msg.reply_photo(
-            photo="https://telegra.ph/file/your_image.png",  # 🔁 Replace with your image URL or file path
+            photo="https://graph.org/file/01ddfcb1e8203879a63d7.jpg",  # 🔁 Replace with your image URL or file path
             caption="❌ **Movie Not Found!**\n\nWe couldn't find that movie in our database. Please check the name and try again.",
             parse_mode="markdown",
             quote=True
