@@ -94,7 +94,7 @@ async def pm_spoll_tester(bot, query):
         await query.message.delete()
         await bot.send_photo(
             chat_id=query.message.chat.id,
-            photo="https://i.imgur.com/NotFoundImage.jpg",  # 🔁 Replace with your image URL or local file path
+            photo="https://graph.org/file/01ddfcb1e8203879a63d7.jpg",  # 🔁 Replace with your image URL or local file path
             caption=(
                 "❌ **Movie Not Found!**\n\n"
                 "We couldn't find this movie in our database.\n"
